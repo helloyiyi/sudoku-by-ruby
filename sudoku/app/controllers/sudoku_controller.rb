@@ -1,4 +1,5 @@
 class SudokuController < ApplicationController
-  def home
-  end
+    def home
+        @mytime = Time.now.asctime
+    end
 end

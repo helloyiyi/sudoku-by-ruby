@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Numbers</h1>
+<p>Note: Index is the coordinate of the number</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @numbers.each do |number| %>
+      <tr>
+        <td><%= number.index %></td>
+        <td><%= number.value %></td>
+        <td><%= link_to 'Show', number %></td>
+        <td><%= link_to 'Edit', edit_number_path(number) %></td>
+        <td><%= link_to 'Destroy', number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Number', new_number_path %>
+
+<%= link_to 'Validate', numbers_validate_path, method: :post %>
+
+ 
