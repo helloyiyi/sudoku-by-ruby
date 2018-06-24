@@ -1,3 +1,44 @@
 // Place all the styles related to the sudoku controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+#sudo{
+    width: 300px;
+}
+
+.btn {
+    background: #ffcce7;
+    background-image: -webkit-linear-gradient(top, #ffcce7, #eb21a4);
+    background-image: -moz-linear-gradient(top, #ffcce7, #eb21a4);
+    background-image: -ms-linear-gradient(top, #ffcce7, #eb21a4);
+    background-image: -o-linear-gradient(top, #ffcce7, #eb21a4);
+    background-image: linear-gradient(to bottom, #ffcce7, #eb21a4);
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    font-family: Georgia;
+    color: #400f40;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #fc3caf;
+    text-decoration: none;
+  }

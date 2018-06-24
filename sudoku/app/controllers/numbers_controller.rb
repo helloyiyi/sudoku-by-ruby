@@ -4,7 +4,7 @@ class NumbersController < ApplicationController
   # GET /numbers
   # GET /numbers.json
   def index
-    @numbers = Number.all
+    @numbers = Number.order('numbers.index').all
   end
 
   # GET /numbers/1
@@ -96,11 +96,18 @@ class NumbersController < ApplicationController
         @valueof123 = @valueof1 + @valueof2 + @valueof3
         @valueof456 = @valueof4 + @valueof5 + @valueof6
         @valueof789 = @valueof7 + @valueof8 + @valueof9
+        @valueof147 = @valueof1 + @valueof4 + @valueof7
+        @valueof258 = @valueof2 + @valueof5 + @valueof8
+        @valueof369 = @valueof3 + @valueof6 + @valueof9
         if @valueof123 != 6 || @valueof456 != 6 || @valueof789 != 6
           respond_to do |format|
-            format.html { redirect_to numbers_url, notice: "The sum of 1, 2, 3 is #{@valueof123}, the sum of 4, 5, 6 is #{@valueof456}, the sum of 7, 8, 9 is #{@valueof789}"}
+            format.html { redirect_to numbers_url, notice: "The sum of the first row is #{@valueof123}, the sum of the second row is #{@valueof456}, the sum of the third row is #{@valueof789}"}
           end
-        else
+        elsif @valueof147 != 6 || @valueof258 != 6 || @valueof369 != 6
+          respond_to do |format|
+            format.html { redirect_to numbers_url, notice: "The sum of the first column is #{@valueof147}, the sum of the second column is #{@valueof258}, the sum of the third column is #{@valueof369}"}
+          end
+        else 
           respond_to do |format|
             format.html { redirect_to numbers_url, notice: "Congratulations! You solved the puzzle!!!"}
           end
