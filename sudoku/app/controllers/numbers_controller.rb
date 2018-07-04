@@ -1,6 +1,10 @@
 class NumbersController < ApplicationController
   before_action :set_number, only: [:show, :edit, :update, :destroy, :validate_sudoku]
 
+  # def initialize
+  #   Number.new(:index => "1", :value => "0").save
+  # end
+
   # GET /numbers
   # GET /numbers.json
   def index
@@ -109,7 +113,7 @@ class NumbersController < ApplicationController
           end
         else 
           respond_to do |format|
-            format.html { redirect_to numbers_url, notice: "Congratulations! You solved the puzzle!!!"}
+          format.html { redirect_to numbers_url, notice: "Congratulations! You solved the puzzle!!!"}
           end
         end
       end
